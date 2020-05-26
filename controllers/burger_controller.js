@@ -24,7 +24,7 @@ router.post("/api/burgers", function (req, res) {
 router.put("/api/burgers/:id", function (req, res) {
     var newValue = "devoured = true"
     console.log(req.body.devoured)
-    burger.update({
+    burger.updateOne({
         devoured: req.body.devoured
     }, "id", req.params.id, function (result) {
         if (result.changedRows == 0) {
@@ -35,3 +35,5 @@ router.put("/api/burgers/:id", function (req, res) {
         }
     });
 });
+
+module.exports = router;

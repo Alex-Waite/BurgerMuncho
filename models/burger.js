@@ -18,4 +18,4 @@ var borger = {
     },
 };
 
-module.exports = burger;
+module.exports = borger;
