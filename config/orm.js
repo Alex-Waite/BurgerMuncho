@@ -16,35 +16,45 @@ var orm = {
     // },
 
     // Selects all burgers, eaten or not
-    selectAll: function (table) {
-        var queryString = "SELECT * FROM ??";
-        console.log(queryString);
-        connection.query(queryString, [table], function (err, result) {
-            if (err) throw err;
-            console.log(result);
-        });
+    selectAll: function () {
+        return new Promise((resolve, reject) => {
+            var queryString = "SELECT * FROM burgers";
+            console.log(queryString);
+            connection.query(queryString, function (err, result) {
+                if (err) return reject(err);
+                console.log(result);
+                return resolve(result)
+            });
+        })
     },
     // Insert a new table int database (will be non-devoured by default)
     insertOne: function (table, affectValue, actualValue) {
-        var queryString = "INSERT INTO ?? (??) VALUES (??)";
-        console.log(queryString);
-        connection.query(queryString, [table, affectValue, actualValue], function (err, result) {
-            if (err) throw err;
-            console.log(result);
+        return new Promise((resolve, reject) => {
+
+            var queryString = "INSERT INTO burgers (??) VALUES (??)";
+            console.log(queryString);
+            connection.query(queryString, [table, affectValue, actualValue], function (err, result) {
+                if (err) return reject(err);
+                console.log(result);
+                return resolve(result)
+            })
         });
     },
     // Update the value of one burger
-    updateOne: function (table, newValue, column, colValue) {
-        var queryString = "UPDATE ?? SET ?? WHERE ?? = ?";
-        console.log(queryString);
-        connection.query(
-            queryString,
-            [table, newValue, column, colValue],
-            function (err, result) {
-                if (err) throw err;
-                console.log(result);
-            }
-        );
+    updateOne: function (newValue, colValue) {
+        return new Promise((resolve, reject) => {
+            var queryString = "UPDATE burgers SET ? WHERE id = ?";
+            console.log(queryString);
+            connection.query(
+                queryString,
+                [newValue, colValue],
+                function (err, result) {
+                    if (err) return reject(err);
+                    console.log(result);
+                    return resolve(result)
+                }
+            );
+        })
     }
 };
 

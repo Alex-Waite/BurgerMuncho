@@ -2,19 +2,16 @@ var orm = require("../config/orm.js");
 
 var borger = {
     selectAll: function (cb) {
-        orm.selectAll("burgers", function (res) {
+        orm.selectAll().then(function (res) {
             cb(res);
         });
     },
     insertOne: function (affectValue, actualValue, cb) {
-        orm.insertOne("burgers", affectValue, actualValue, function (res) {
-            cb(res);
-        });
+        return orm.insertOne(affectValue, actualValue)
+
     },
-    updateOne: function (newValue, column, colValue, cb) {
-        orm.update("burgers", newValue, column, colValue, function (res) {
-            cb(res);
-        });
+    updateOne: function (newValue, colValue, cb) {
+        return orm.updateOne(newValue, colValue)
     },
 };
 
