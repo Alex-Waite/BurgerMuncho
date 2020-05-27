@@ -1,6 +1,6 @@
-INSERT INTO burgers (name) VALUES ('YumBorger');
-INSERT INTO burgers (name) VALUES ('BigBurgor');
-INSERT INTO burgers (name) VALUES ('SmolBerger');
-INSERT INTO burgers (name, devoured) VALUES ('YuckBurgar', true);
-INSERT INTO burgers (name, devoured) VALUES ('PurpleBuhgor', true);
-INSERT INTO burgers (name, devoured) VALUES ('AppleBirger', true);
+INSERT INTO burgers (name, devoured) VALUES ('MossBurger', true);
+INSERT INTO burgers (name, devoured) VALUES ('Just ants in a bun', true);
+INSERT INTO burgers (name, devoured) VALUES ('Wet Burger', true);
+INSERT INTO burgers (name, devoured) VALUES ('the UNHYGENIC', true);
+INSERT INTO burgers (name, devoured) VALUES ('Burger sandwich', true);
+INSERT INTO burgers (name, devoured) VALUES ('Perfume Burger', true);

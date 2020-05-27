@@ -1,9 +1,5 @@
 var connection = require("./connection.js");
-
 // Object Relational Mapper (ORM)
-
-
-
 var orm = {
     // Not nececary but would be cool to get working in future
 
